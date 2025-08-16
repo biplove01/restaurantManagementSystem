@@ -1,9 +1,9 @@
 package com.crudSE.demo.models;
 
+import com.crudSE.demo.models.Customer.Customer;
 import jakarta.persistence.*;
 import lombok.Data;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -17,7 +17,7 @@ public class OrderList {
   @OneToMany(mappedBy = "orderList", cascade = CascadeType.ALL)
   private List<OrderItem> orderItems;
   
-  
   @ManyToOne
+  @JoinColumn(name = "customer_id")
   private Customer customer;
 }

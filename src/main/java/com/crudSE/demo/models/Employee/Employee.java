@@ -1,6 +1,6 @@
-package com.crudSE.demo.models;
+package com.crudSE.demo.models.Employee;
 
-import com.crudSE.demo.models.enums.RoleStatus;
+import com.crudSE.demo.models.Role;
 import jakarta.persistence.*;
 import lombok.Data;
 
@@ -16,6 +16,10 @@ public class Employee {
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long id;
   private String name;
+  private String email;
+  private String address;
+  private Long phone;
+  private String password;
   
   @OneToMany(fetch = FetchType.EAGER, cascade = {
       CascadeType.ALL,
